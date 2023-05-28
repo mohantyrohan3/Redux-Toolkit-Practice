@@ -5,20 +5,25 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import Home from './components/Home';
+
 import NavBar from './components/Navbar';
 import Cart from './components/Cart';
+import HomeRoute from './components/HomeRoute';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <NavBar/>
         <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route exact path="/cart" element={<Cart/>} />
+          <Route  path="/" element={<HomeRoute/>} />
+          <Route  path="/cart" element={<Cart/>} />
         </Routes>
 
     </Router>
+    </Provider>
   );
 }
 

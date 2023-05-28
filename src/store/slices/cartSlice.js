@@ -16,7 +16,7 @@ const cartSlice = createSlice({
                     break;
                 }
             }
-            return state.splice(id,1);
+             state.splice(id,1);
         },
     }
 });
